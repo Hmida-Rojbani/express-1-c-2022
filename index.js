@@ -69,4 +69,12 @@ app.put('/api/students/:id', (req,res)=>{
     res.send(student);
 });
 
+app.delete('/api/students/:id', (req,res)=>{
+    const student = students.find(s=>s.id === parseInt(req.params.id));
+    if(!student)
+        return res.status(404).send('Student id not found');
+    students = students.filter(s=>s.id !== parseInt(req.params.id));
+    res.send(student);
+});
+
 app.listen(port,()=>console.log(`Server runnig on ${port}`));
