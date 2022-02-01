@@ -1,0 +1,6 @@
+{
+    "app_name" : "STUDENT_API_DEV",
+    "DB" : {
+        "host":"host dev"
+    } 
+}

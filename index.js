@@ -2,6 +2,12 @@ const express = require('express');
 const Joi = require('joi');
 //const log = require('./log');
 const morgan = require('morgan');
+const config = require('config');
+
+console.log('Application name :', config.get('app_name'));
+console.log('DB credts : host', config.get('DB.host'));
+console.log('DB credts : password', config.get('DB.password'));
+
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -29,7 +35,7 @@ let students = [
     {id:3, name : "std3"}
 ];
 
-console.log(process.env.NODE_ENV);
+//console.log(process.env.NODE_ENV);
 console.log(app.get('env'));
 
 if(app.get('env') === 'development'){
